@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Rows>
+    <Row>
+        <DecimalNumber>1</DecimalNumber>
+        <RomanNumber>I</RomanNumber>
+    </Row>
+    <Row>
+        <DecimalNumber>10</DecimalNumber>
+        <RomanNumber>X</RomanNumber>
+    </Row>
+    <Row>
+        <DecimalNumber>100</DecimalNumber>
+        <RomanNumber>C</RomanNumber>
+    </Row>
+    <Row>
+        <DecimalNumber>1000</DecimalNumber>
+        <RomanNumber>M</RomanNumber>
+    </Row>
+    <Row>
+        <DecimalNumber>899</DecimalNumber>
+        <RomanNumber>DCCCXCIX</RomanNumber>
+    </Row>
+    <Row>
+        <DecimalNumber>90</DecimalNumber>
+        <RomanNumber>XC</RomanNumber>
+    </Row>
+    <Row>
+        <DecimalNumber>9</DecimalNumber>
+        <RomanNumber>IX</RomanNumber>
+    </Row>
+    <Row>
+        <DecimalNumber>4</DecimalNumber>
+        <RomanNumber>IV</RomanNumber>
+    </Row>
+    <Row>
+        <DecimalNumber>40</DecimalNumber>
+        <RomanNumber>XL</RomanNumber>
+    </Row>
+    <Row>
+        <DecimalNumber>3</DecimalNumber>
+        <RomanNumber>III</RomanNumber>
+    </Row>
+    <Row>
+        <DecimalNumber>99</DecimalNumber>
+        <RomanNumber>XCIX</RomanNumber>
+    </Row>
+</Rows>
