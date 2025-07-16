@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
+#include <string.h>
 #include "roman.h"
 
 void test_null_input() {
@@ -76,6 +77,45 @@ void test_edge_cases() {
     printf("✓ Edge cases tests passed\n");
 }
 
+void test_decimal_to_roman() {
+    char* result;
+    
+    result = decimal_to_roman(1);
+    assert(strcmp(result, "I") == 0);
+    free(result);
+    
+    result = decimal_to_roman(4);
+    assert(strcmp(result, "IV") == 0);
+    free(result);
+    
+    result = decimal_to_roman(9);
+    assert(strcmp(result, "IX") == 0);
+    free(result);
+    
+    result = decimal_to_roman(58);
+    assert(strcmp(result, "LVIII") == 0);
+    free(result);
+    
+    result = decimal_to_roman(1990);
+    assert(strcmp(result, "MCMXC") == 0);
+    free(result);
+    
+    result = decimal_to_roman(2444);
+    assert(strcmp(result, "MMCDXLIV") == 0);
+    free(result);
+    
+    result = decimal_to_roman(3999);
+    assert(strcmp(result, "MMMCMXCIX") == 0);
+    free(result);
+    
+    // Test invalid inputs
+    assert(decimal_to_roman(0) == NULL);
+    assert(decimal_to_roman(-1) == NULL);
+    assert(decimal_to_roman(4000) == NULL);
+    
+    printf("✓ Decimal to Roman tests passed\n");
+}
+
 int main(void) {
     printf("Running Roman Numeral Tests\n");
     printf("==========================\n");
@@ -88,6 +128,7 @@ int main(void) {
     test_complex_numbers();
     test_invalid_characters();
     test_edge_cases();
+    test_decimal_to_roman();
     
     printf("\n🎉 All tests passed!\n");
     return 0;

@@ -15,12 +15,7 @@ TARGET = $(BIN_DIR)/program
 
 # Find all .c files in src directory
 SOURCES = $(wildcard $(SRC_DIR)/*.c)
-
-# Define files to exclude from main build
-# EXCLUDE_SOURCES = $(SRC_DIR)/test_roman.c
-
-# Filter out excluded sources
-#MAIN_SOURCES = $(filter-out $(EXCLUDE_SOURCES),$(SOURCES))
+# Replace all .c files in src to .o files
 OBJECTS = $(patsubst  $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SOURCES))
 
 # Default target

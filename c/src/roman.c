@@ -1,5 +1,7 @@
 #include "roman.h"
 #include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 static int get_roman_value(char c) {
     switch (c) {
@@ -28,6 +30,32 @@ int roman_to_decimal(const char* roman) {
             result -= current;
         } else {
             result += current;
+        }
+    }
+
+    return result;
+}
+
+char* decimal_to_roman(int decimal) {
+    if (decimal <= 0 || decimal > 3999) {
+        return NULL; // Roman numerals can't represent 0 or negative numbers, and traditionally only go up to 3999 (MMMCMXCIX)
+    }
+
+    // Maximum length needed for the largest number (3999 = MMMCMXCIX) plus null terminator
+    char* result = (char*)malloc(16 * sizeof(char));
+    if (!result) return NULL;
+
+    result[0] = '\0'; // Initialize as empty string
+
+    // Define value-symbol pairs in descending order
+    int values[] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+    const char* symbols[] = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+
+    // Build the Roman numeral
+    for (int i = 0; i < 13; i++) {
+        while (decimal >= values[i]) {
+            strcat(result, symbols[i]);
+            decimal -= values[i];
         }
     }
 
